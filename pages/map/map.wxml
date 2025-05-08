@@ -1,0 +1,4 @@
+<!--pages/map/map.wxml-->
+<view class="container">
+  <image class="map-image" src="/assets/images/park-map.jpg" mode="widthFix"></image>
+</view> 

@@ -1,0 +1,14 @@
+<cover-view class="tab-bar">
+  <cover-view class="tab-bar-border"></cover-view>
+  <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <cover-view class="icon-wrapper">
+      <cover-view class="icon" style="color: {{selected === index ? selectedColor : color}}">
+        <cover-image wx:if="{{item.icon === 'home'}}" src="/assets/icons/home.png" class="icon-image"></cover-image>
+        <cover-image wx:elif="{{item.icon === 'calendar'}}" src="/assets/icons/calendar.png" class="icon-image"></cover-image>
+        <cover-image wx:elif="{{item.icon === 'list'}}" src="/assets/icons/list.png" class="icon-image"></cover-image>
+        <cover-image wx:elif="{{item.icon === 'user'}}" src="/assets/icons/user.png" class="icon-image"></cover-image>
+      </cover-view>
+    </cover-view>
+    <cover-view style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</cover-view>
+  </cover-view>
+</cover-view> 

@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/profile/profile",
+    "pages/booking/booking",
+    "pages/order/order",
+    "pages/children/children",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/notice/detail",
+    "pages/logs/logs",
+    "pages/order-detail/order-detail",
+    "pages/projects/projects",
+    "pages/activities/activities",
+    "pages/activity-detail/activity-detail",
+    "pages/settings/settings",
+    "pages/security/security",
+    "pages/privacy/privacy",
+    "pages/about/about",
+    "pages/change-password/change-password",
+    "pages/bind-phone/bind-phone",
+    "pages/bind-email/bind-email",
+    "pages/login-history/login-history",
+    "pages/device-management/device-management",
+    "pages/privacy-policy/privacy-policy",
+    "pages/user-agreement/user-agreement",
+    "pages/feedback/feedback",
+    "pages/map/map"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "儿童乐园",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#999999",
+    "selectedColor": "#07c160",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/booking/booking",
+        "text": "预约"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+} 

@@ -1,0 +1,87 @@
+/* pages/about/about.wxss */
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 应用信息 */
+.app-info {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 60rpx 40rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.app-logo {
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 30rpx;
+}
+
+.app-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.app-version {
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* 功能列表 */
+.section {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx 0;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.menu-list {
+  padding: 0 30rpx;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-text {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.menu-arrow {
+  font-size: 30rpx;
+  color: #999;
+}
+
+/* 版权信息 */
+.copyright {
+  margin-top: auto;
+  padding: 40rpx 0;
+  text-align: center;
+}
+
+.copyright text {
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1.8;
+}

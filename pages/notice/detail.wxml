@@ -1,0 +1,13 @@
+<!--pages/notice/detail.wxml-->
+<view class="container">
+  <view class="notice-detail" wx:if="{{notice}}">
+    <view class="notice-header">
+      <text class="notice-title">{{notice.title}}</text>
+      <text class="notice-time">{{notice.time}}</text>
+    </view>
+    <view class="notice-content">
+      <text>{{notice.content}}</text>
+    </view>
+  </view>
+  <view class="back-btn" bindtap="onBack">返回</view>
+</view> 

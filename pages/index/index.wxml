@@ -1,0 +1,127 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 页面加载动画 -->
+  <view class="page-loading" wx:if="{{pageLoading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <!-- 轮播图 -->
+  <swiper class="banner" 
+    indicator-dots="{{true}}" 
+    autoplay="{{true}}" 
+    interval="{{3000}}" 
+    duration="{{500}}" 
+    circular="{{true}}"
+    indicator-color="rgba(255, 255, 255, 0.6)"
+    indicator-active-color="#ffffff">
+    <swiper-item wx:for="{{banners}}" wx:key="id" bindtap="onBannerTap" data-link="{{item.link}}">
+      <image src="{{item.imageUrl}}" mode="aspectFill" class="banner-image"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 快捷操作 -->
+  <view class="quick-actions">
+    <view class="action-item" bindtap="navigateToBooking">
+      <text class="action-icon">📅</text>
+      <text class="action-text">在线预约</text>
+    </view>
+    <view class="action-item" bindtap="navigateToActivities">
+      <text class="action-icon">🎪</text>
+      <text class="action-text">最新活动</text>
+    </view>
+    <view class="action-item" bindtap="navigateToProjects">
+      <text class="action-icon">🎡</text>
+      <text class="action-text">游乐项目</text>
+    </view>
+    <view class="action-item" bindtap="navigateToMap">
+      <text class="action-icon">🗺️</text>
+      <text class="action-text">园区导航</text>
+    </view>
+  </view>
+
+  <!-- 热门项目 -->
+  <view class="section">
+    <view class="section-header">
+      <view class="section-title-wrapper">
+        <text class="section-title">热门项目</text>
+        <text class="section-subtitle">HOT PROJECTS</text>
+      </view>
+      <text class="more" bindtap="navigateToProjects">查看更多</text>
+    </view>
+    <scroll-view class="project-list" scroll-x enable-flex show-scrollbar="{{false}}">
+      <view class="project-item" wx:for="{{hotProjects}}" wx:key="id" bindtap="onProjectTap" data-id="{{item.id}}">
+        <image src="{{item.imageUrl}}" mode="aspectFill" class="project-image"></image>
+        <view class="project-info">
+          <text class="project-name">{{item.name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 最新活动 -->
+  <view class="section">
+    <view class="section-header">
+      <view class="section-title-wrapper">
+        <text class="section-title">最新活动</text>
+        <text class="section-subtitle">LATEST ACTIVITIES</text>
+      </view>
+      <text class="more" bindtap="navigateToActivities">查看更多</text>
+    </view>
+    <view class="activity-list">
+      <view class="activity-item" 
+            wx:for="{{activities}}" 
+            wx:key="id" 
+            bindtap="onActivityTap" 
+            data-id="{{item.id}}">
+        <image src="{{item.imageUrl}}" mode="aspectFill" class="activity-image"></image>
+        <view class="activity-info">
+          <view class="activity-header">
+            <text class="activity-title">{{item.title}}</text>
+          </view>
+          <view class="activity-meta">
+            <text class="activity-time">{{item.startTime}} - {{item.endTime}}</text>
+            <view class="activity-brief">
+              <text>{{item.description}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 加载状态 -->
+    <view class="loading-container" wx:if="{{isLoading}}">
+      <view class="loading-spinner"></view>
+      <text class="loading-text">加载中...</text>
+    </view>
+    <!-- 无更多数据提示 -->
+    <view class="no-more" wx:if="{{!hasMore && activities.length > 0}}">
+      <text>没有更多活动了</text>
+    </view>
+    <!-- 无数据提示 -->
+    <view class="no-data" wx:if="{{!isLoading && activities.length === 0}}">
+      <text>暂无进行中的活动</text>
+    </view>
+  </view>
+
+  <!-- 园区公告 -->
+  <view class="section">
+    <view class="section-header">
+      <view class="section-title-wrapper">
+        <text class="section-title">园区公告</text>
+        <text class="section-subtitle">PARK NOTICES</text>
+      </view>
+    </view>
+    <view class="notice-list">
+      <view class="notice-item" wx:for="{{notices}}" wx:key="id" bindtap="onNoticeTap" data-id="{{item.id}}">
+        <view class="notice-content">
+          <text class="notice-title">{{item.title}}</text>
+          <text class="notice-desc">{{item.content}}</text>
+        </view>
+        <text class="notice-time">{{item.time}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部白色条带 -->
+  <view class="bottom-white-bar"></view>
+</view>

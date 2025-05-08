@@ -1,0 +1,66 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="container">
+  <view class="feedback-form">
+    <!-- 反馈类型 -->
+    <view class="form-item">
+      <text class="label">反馈类型</text>
+      <view class="type-selector">
+        <view class="type-item {{selectedType === 'bug' ? 'selected' : ''}}" 
+              bindtap="selectType" data-type="bug">
+          <text>问题反馈</text>
+        </view>
+        <view class="type-item {{selectedType === 'suggestion' ? 'selected' : ''}}" 
+              bindtap="selectType" data-type="suggestion">
+          <text>功能建议</text>
+        </view>
+        <view class="type-item {{selectedType === 'other' ? 'selected' : ''}}" 
+              bindtap="selectType" data-type="other">
+          <text>其他</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 反馈内容 -->
+    <view class="form-item">
+      <text class="label">反馈内容</text>
+      <textarea class="content-input" 
+                placeholder="请详细描述您遇到的问题或建议..." 
+                maxlength="500"
+                bindinput="onContentInput"
+                value="{{content}}"></textarea>
+      <text class="word-count">{{content.length}}/500</text>
+    </view>
+
+    <!-- 联系方式 -->
+    <view class="form-item">
+      <text class="label">联系方式（选填）</text>
+      <input class="contact-input" 
+             placeholder="请留下您的手机号或邮箱" 
+             bindinput="onContactInput"
+             value="{{contact}}"/>
+    </view>
+
+    <!-- 图片上传 -->
+    <view class="form-item">
+      <text class="label">上传截图（选填）</text>
+      <view class="image-uploader">
+        <view class="image-list">
+          <block wx:for="{{images}}" wx:key="index">
+            <view class="image-item">
+              <image src="{{item}}" mode="aspectFill" bindtap="previewImage" data-index="{{index}}"></image>
+              <view class="delete-btn" bindtap="deleteImage" data-index="{{index}}">×</view>
+            </view>
+          </block>
+          <view class="upload-btn" bindtap="chooseImage" wx:if="{{images.length < 3}}">
+            <text class="upload-icon">+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="submit-btn {{canSubmit ? '' : 'disabled'}}" bindtap="submitFeedback">
+    提交反馈
+  </view>
+</view> 

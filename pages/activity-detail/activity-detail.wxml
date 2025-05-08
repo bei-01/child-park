@@ -1,0 +1,75 @@
+<!--pages/activity-detail/activity-detail.wxml-->
+<view class="container">
+  <!-- 顶部图片区域 -->
+  <view class="activity-header">
+    <image src="{{activity.imageUrl}}" mode="aspectFill" class="header-image"></image>
+  </view>
+
+  <!-- 内容区域 -->
+  <view class="content">
+    <!-- 标题和时间信息 -->
+    <view class="title-section">
+      <view class="title-row">
+        <text class="title">{{activity.title}}</text>
+        <text class="status-tag {{activity.isExpired ? 'expired' : 'ongoing'}}">
+          {{activity.isExpired ? '已结束' : '进行中'}}
+        </text>
+      </view>
+      <view class="time-info">
+        <image src="/images/icons/calendar.png" class="icon-small"></image>
+        <text class="time">{{activity.startTime}} - {{activity.endTime}}</text>
+      </view>
+    </view>
+
+    <!-- 活动说明 -->
+    <view class="section">
+      <view class="section-title">
+        <image src="/images/icons/info.png" class="icon-small"></image>
+        <text>活动说明</text>
+      </view>
+      <view class="section-content">
+        <text class="description">{{activity.description}}</text>
+      </view>
+    </view>
+
+    <!-- 活动须知 -->
+    <view class="section">
+      <view class="section-title">
+        <image src="/images/icons/notice.png" class="icon-small"></image>
+        <text>活动须知</text>
+      </view>
+      <view class="section-content">
+        <view class="notice-list">
+          <view class="notice-item">
+            <text class="dot">•</text>
+            <text>活动地点：儿童乐园活动中心</text>
+          </view>
+          <view class="notice-item">
+            <text class="dot">•</text>
+            <text>参与年龄：3-12岁儿童</text>
+          </view>
+          <view class="notice-item">
+            <text class="dot">•</text>
+            <text>报名方式：现场报名或电话预约</text>
+          </view>
+          <view class="notice-item">
+            <text class="dot">•</text>
+            <text>咨询电话：123-4567-8900</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 底部按钮 -->
+    <view class="bottom-bar">
+      <button class="contact-btn" open-type="contact">
+        <image src="/images/icons/phone.png" class="icon-small"></image>
+        <text>联系我们</text>
+      </button>
+      <button class="share-btn" open-type="share">
+        <image src="/images/icons/share.png" class="icon-small"></image>
+        <text>分享活动</text>
+      </button>
+    </view>
+  </view>
+</view> 

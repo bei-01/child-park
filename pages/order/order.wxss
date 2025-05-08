@@ -1,0 +1,217 @@
+/* pages/order/order.wxss */
+.container {
+  padding: var(--spacing-md);
+  padding-bottom: 280rpx; /* 增加底部padding，为底部导航栏和白色条带留出空间 */
+  background-color: var(--background-color);
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 标签栏样式 */
+.tabs {
+  display: flex;
+  background-color: #fff;
+  padding: var(--spacing-sm) 0;
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  position: relative;
+  padding: var(--spacing-sm) 0;
+  transition: all var(--transition-fast);
+}
+
+.tab-item.active {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background-color: var(--primary-color);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+/* 订单列表样式 */
+.order-list {
+  padding-bottom: var(--spacing-lg);
+}
+
+.loading, .empty-tip {
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: var(--font-size-md);
+  padding: var(--spacing-lg) 0;
+}
+
+.order-item {
+  background-color: #fff;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.order-item:active {
+  transform: scale(0.98);
+  box-shadow: var(--shadow-md);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2rpx solid var(--border-color);
+}
+
+.order-type {
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.order-status {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+}
+
+.order-status.pending {
+  color: var(--warning-color);
+}
+
+.order-status.completed {
+  color: var(--success-color);
+}
+
+.order-status.cancelled {
+  color: var(--text-tertiary);
+}
+
+.order-content {
+  margin-bottom: var(--spacing-md);
+}
+
+.order-info {
+  font-size: var(--font-size-md);
+}
+
+.info-item {
+  display: flex;
+  margin-bottom: var(--spacing-sm);
+}
+
+.info-item .label {
+  color: var(--text-secondary);
+  width: 160rpx;
+}
+
+.info-item .value {
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.info-item .value.price {
+  color: #f56c6c;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.children-info {
+  margin-top: var(--spacing-sm);
+}
+
+.children-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.child-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background-color: var(--primary-light);
+  border-radius: var(--radius-md);
+}
+
+.child-name {
+  font-size: var(--font-size-md);
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.child-detail {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--spacing-md);
+  border-top: 2rpx solid var(--border-color);
+}
+
+.order-time {
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary);
+}
+
+.order-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.action-btn {
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  background-color: #fff;
+  border: 2rpx solid var(--border-color);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.action-btn.cancel {
+  border-color: var(--error-color);
+  color: var(--error-color);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+/* 底部白色条带 */
+.bottom-white-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150rpx;
+  background-color: #ffffff;
+  z-index: 99;
+}

@@ -1,0 +1,109 @@
+<!--pages/booking/booking.wxml-->
+<view class="page-container">
+  <!-- 日期选择 -->
+  <view class="section">
+    <view class="section-title">选择日期</view>
+    <picker mode="date" value="{{selectedDate}}" start="{{minDate}}" end="{{maxDate}}" bindchange="bindDateChange">
+      <view class="picker">
+        当前选择: {{selectedDate}}
+      </view>
+    </picker>
+  </view>
+
+  <!-- 时间选择 -->
+  <view class="section">
+    <view class="section-title">选择时间</view>
+    <picker mode="time" value="{{selectedTime}}" start="09:00" end="17:00" bindchange="bindTimeChange">
+      <view class="picker">
+        当前选择: {{selectedTime || '请选择时间'}}
+      </view>
+    </picker>
+  </view>
+
+  <!-- 儿童选择 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">选择儿童</text>
+      <text class="add-child" bindtap="navigateToAddChild">添加儿童</text>
+    </view>
+    <view class="children-list">
+      <block wx:if="{{children.length > 0}}">
+        <view class="child-item {{selectedChildren.includes(item.id) ? 'selected' : ''}}" 
+              wx:for="{{children}}" 
+              wx:key="id" 
+              bindtap="selectChild" 
+              data-id="{{item.id}}">
+          <view class="child-info">
+            <text class="child-name">{{item.name}}</text>
+            <text class="child-detail">{{item.age}}岁 {{item.gender}}</text>
+          </view>
+          <view class="select-icon">{{selectedChildren.includes(item.id) ? '✓' : ''}}</view>
+        </view>
+      </block>
+      <view wx:else class="no-children">
+        暂无儿童信息，请先添加儿童
+      </view>
+    </view>
+    <view class="children-tip">最多可选择{{maxChildren}}人</view>
+    <view class="selected-children" wx:if="{{selectedChildren.length > 0}}">
+      <view class="selected-title">已选择的儿童：</view>
+      <view class="selected-list">
+        <view class="selected-item" wx:for="{{selectedChildrenInfo}}" wx:key="id">
+          {{item.name}}（{{item.age}}岁 {{item.gender}}）
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 价格信息 -->
+  <view class="section price-section">
+    <view class="section-title">费用明细</view>
+    <view class="price-item">
+      <text>门票单价</text>
+      <text class="price">¥{{ticketPrice}}</text>
+    </view>
+    <view class="price-item">
+      <text>儿童数量</text>
+      <text>{{selectedChildren.length}}人</text>
+    </view>
+    <view class="price-item total">
+      <text>总计</text>
+      <text class="price">¥{{totalPrice}}</text>
+    </view>
+  </view>
+
+  <!-- 支付方式 -->
+  <view class="section payment-section">
+    <view class="section-title">支付方式</view>
+    <view class="payment-methods">
+      <view class="payment-method {{selectedPayment === 'wechat' ? 'selected' : ''}}" 
+            bindtap="selectPayment" 
+            data-type="wechat">
+        <image src="/assets/icons/wechat-pay.png" mode="aspectFit"></image>
+        <text>微信支付</text>
+        <view class="select-icon">{{selectedPayment === 'wechat' ? '✓' : ''}}</view>
+      </view>
+      <view class="payment-method {{selectedPayment === 'alipay' ? 'selected' : ''}}" 
+            bindtap="selectPayment" 
+            data-type="alipay">
+        <image src="/assets/icons/alipay.png" mode="aspectFit"></image>
+        <text>支付宝</text>
+        <view class="select-icon">{{selectedPayment === 'alipay' ? '✓' : ''}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部支付按钮 -->
+  <view class="bottom-bar">
+    <view class="price-display">
+      <text>合计：</text>
+      <text class="total-price">¥{{totalPrice}}</text>
+    </view>
+    <button class="pay-button {{!canPay ? 'pay-button-disabled' : ''}}" bindtap="handlePayment">
+      立即支付
+    </button>
+  </view>
+
+  <!-- 底部白色条带 -->
+  <view class="bottom-white-bar"></view>
+</view>

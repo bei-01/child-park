@@ -1,0 +1,70 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+  background-color: #f8f8f8;
+}
+
+.form {
+  width: 100%;
+  padding: 40rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin-bottom: 30rpx;
+}
+
+.input-group input {
+  width: 100%;
+  height: 88rpx;
+  padding: 0 30rpx;
+  border: 2rpx solid #e5e5e5;
+  border-radius: 44rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.agreement {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #666;
+  margin: 20rpx 0;
+}
+
+.agreement-link {
+  color: #1296db;
+  margin-left: 4rpx;
+}
+
+.register-btn {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #1296db;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 44rpx;
+  margin: 40rpx 0;
+}
+
+.register-btn[disabled] {
+  background: #ccc;
+  color: #fff;
+}
+
+.actions {
+  text-align: center;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.actions text {
+  color: #1296db;
+  padding: 10rpx;
+} 

@@ -1,0 +1,63 @@
+<!--pages/order-detail/order-detail.wxml-->
+<view class="container">
+  <view class="order-detail">
+    <!-- 订单状态 -->
+    <view class="status-section">
+      <text class="status {{order.status === '待使用' ? 'pending' : order.status === '已完成' ? 'completed' : 'cancelled'}}">
+        {{order.status}}
+      </text>
+    </view>
+
+    <!-- 预约信息 -->
+    <view class="section">
+      <view class="section-title">预约信息</view>
+      <view class="info-list">
+        <view class="info-item">
+          <text class="label">预约日期</text>
+          <text class="value">{{order.date}}</text>
+        </view>
+        <view class="info-item">
+          <text class="label">预约时间</text>
+          <text class="value">{{order.time}}</text>
+        </view>
+        <view class="info-item">
+          <text class="label">游客数量</text>
+          <text class="value">{{order.visitorCount}}人</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 儿童信息 -->
+    <view class="section">
+      <view class="section-title">预约儿童</view>
+      <view class="children-list">
+        <view class="child-item" wx:for="{{order.children}}" wx:key="id">
+          <view class="child-info">
+            <text class="child-name">{{item.name}}</text>
+            <text class="child-detail">{{item.age}}岁 {{item.gender}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 订单信息 -->
+    <view class="section">
+      <view class="section-title">订单信息</view>
+      <view class="info-list">
+        <view class="info-item">
+          <text class="label">订单编号</text>
+          <text class="value">{{order.id}}</text>
+        </view>
+        <view class="info-item">
+          <text class="label">下单时间</text>
+          <text class="value">{{order.createTime}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 底部按钮 -->
+    <view class="footer" wx:if="{{order.status === '待使用'}}">
+      <button class="cancel-btn" bindtap="cancelOrder">取消预约</button>
+    </view>
+  </view>
+</view> 

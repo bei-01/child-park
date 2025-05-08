@@ -1,0 +1,11 @@
+<!--pages/projects/projects.wxml-->
+<view class="container">
+  <view class="project-grid">
+    <view class="project-item" wx:for="{{projects}}" wx:key="id" bindtap="onProjectTap" data-id="{{item.id}}">
+      <image src="{{item.imageUrl}}" mode="aspectFill" class="project-image"></image>
+      <view class="project-info">
+        <text class="project-name">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="booking-form">
+    <text class="title">预约信息</text>
+    <view class="form-item">
+      <text class="label">选择日期</text>
+      <picker mode="date" value="{{date}}" start="2024-01-01" end="2024-12-31" bindchange="onDateChange">
+        <view class="picker">{{date}}</view>
+      </picker>
+    </view>
+  </view>
+</view> 

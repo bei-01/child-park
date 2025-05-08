@@ -1,0 +1,76 @@
+<!--pages/user-agreement/user-agreement.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="title">用户协议</view>
+    <view class="section">
+      <view class="section-title">1. 协议范围</view>
+      <view class="section-content">
+        <text>本协议是您与儿童乐园之间关于使用本应用服务所订立的协议。</text>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">2. 服务内容</view>
+      <view class="section-content">
+        <text>儿童乐园为用户提供以下服务：</text>
+        <text>• 儿童游乐设施信息查询</text>
+        <text>• 位置导航服务</text>
+        <text>• 用户评价和反馈</text>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">3. 用户义务</view>
+      <view class="section-content">
+        <text>用户在使用本服务时应遵守以下规定：</text>
+        <text>• 遵守相关法律法规</text>
+        <text>• 不得发布虚假信息</text>
+        <text>• 不得侵犯他人权益</text>
+        <text>• 不得干扰服务正常运行</text>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">4. 知识产权</view>
+      <view class="section-content">
+        <text>本应用的所有内容，包括但不限于：</text>
+        <text>• 文字、图片、音频、视频</text>
+        <text>• 软件、程序、代码</text>
+        <text>• 商标、专利、著作权</text>
+        <text>均受相关法律法规保护。</text>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">5. 免责声明</view>
+      <view class="section-content">
+        <text>以下情况，本应用不承担责任：</text>
+        <text>• 因不可抗力导致的服务中断</text>
+        <text>• 用户自身原因导致的损失</text>
+        <text>• 第三方原因导致的损失</text>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">6. 协议修改</view>
+      <view class="section-content">
+        <text>我们保留随时修改本协议的权利。修改后的协议将在应用内公布。</text>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">7. 法律适用</view>
+      <view class="section-content">
+        <text>本协议的解释、效力及纠纷的解决，适用中华人民共和国法律。</text>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">8. 联系我们</view>
+      <view class="section-content">
+        <text>如果您对本协议有任何疑问，请通过以下方式联系我们：</text>
+        <text>邮箱：support@example.com</text>
+      </view>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,41 @@
+<!--pages/activities/activities.wxml-->
+<view class="container">
+  <view class="tab-bar">
+    <view class="tab {{currentTab === 'current' ? 'active' : ''}}" bindtap="switchTab" data-tab="current">
+      进行中
+    </view>
+    <view class="tab {{currentTab === 'upcoming' ? 'active' : ''}}" bindtap="switchTab" data-tab="upcoming">
+      待开始
+    </view>
+    <view class="tab {{currentTab === 'expired' ? 'active' : ''}}" bindtap="switchTab" data-tab="expired">
+      已结束
+    </view>
+  </view>
+
+  <view class="activity-list">
+    <view class="activity-item {{item.isExpired ? 'expired' : ''}} {{item.isUpcoming ? 'upcoming' : ''}}" 
+          wx:for="{{filteredActivities}}" 
+          wx:key="id" 
+          bindtap="onActivityTap" 
+          data-id="{{item.id}}">
+      <image src="{{item.imageUrl}}" mode="aspectFill" class="activity-image"></image>
+      <view class="activity-info">
+        <view class="activity-header">
+          <text class="activity-title">{{item.title}}</text>
+          <text class="activity-status {{item.isExpired ? 'expired' : item.isUpcoming ? 'upcoming' : 'ongoing'}}">
+            {{item.isExpired ? '已结束' : item.isUpcoming ? '待开始' : '进行中'}}
+          </text>
+        </view>
+        <view class="activity-meta">
+          <view class="time-info">
+            <image src="/images/icons/calendar.png" class="icon-small"></image>
+            <text class="activity-time">{{item.startTime}} - {{item.endTime}}</text>
+          </view>
+          <view class="activity-brief">
+            <text>{{item.description}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 
